@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <meta name="keyword" content="Python, JavaScript, C# ,html ,css ,devtools,unity">
+    <meta name="description" content="Orhan Sümer | Full Stack Developer">
+
+
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <!--Tablet-->
+    <link rel="stylesheet" media="(max-width:768px)" href="~/css/tablet.css">
+    <!--Mobile-->
+    <link rel="stylesheet" media="(max-width:500px)" href="~/css/mobile.css">
+    <title>Avukat Bilge GÜLER</title>
+</head>
+
+<body>
+
+    <header id="bg-img">
+        <div class="header">
+            <div class="header-left">
+                <a href="#"><i class="fa-solid fa-scale-balanced"></i> Avukat Bilge GÜLER</a>
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li>
+                        <a href="#" id="btnA">
+                            Anasayfa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="btnA">Hakkımızda</a>
+                    </li>
+                    <li>
+                        <a href="#" id="btnA">Çalışma Alanları</a>
+                    </li>
+                    <li>
+                        <a href="#" id="btnA">Makaleler</a>
+                    </li>
+                    <li>
+                        <a href="#" id="btnA">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>Footer</footer>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

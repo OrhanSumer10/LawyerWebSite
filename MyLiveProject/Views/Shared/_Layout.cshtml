@@ -1,0 +1,122 @@
+﻿@model MyLiveProject.Models.ModelViewControl
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+
+    <meta name="keyword" content="Havacılık Hukuku, Ceza Hukuku, İcra ve İflas Hukuku, Ticaret Hukuku">
+    <meta name="description" content="
+			Avukat Bilge GÜLER, Havacılık Hukuku, Ceza Hukuku, İcra ve İflas Hukuku, Ticaret Hukuku ve Şirketler Hukuku başta olmak üzere gerçek ve tüzel kişi müvekkillerine hukukun her alanında erişilebilir, güvenilir ve şeffaf hukuki danışmanlık hizmeti sunmaktadır. İşinizi anlayarak en efektif çözüm yolunu sunan büromuz hukuki sürecinizin ve uyuşmazlıklarınızın en hızlı şekilde sonuca bağlanmasını sağlar.
+			KURUCUAv. Bilge GÜLER">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <!--Tablet-->
+    <link rel="stylesheet" media="(max-width:768px)" href="~/css/tablet.css">
+    <!--Mobile-->
+    <link rel="stylesheet" media="(max-width:540px)" href="~/css/mobile.css">
+
+    <link  rel="icon" type="image/png" href="~/image/logo.png">
+
+    <title>Avukat Bilge GÜLER</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div id="b-navbar">
+                <a href="/Home">
+                    <span><i class="fa-solid fa-house"></i></span>
+                    <p>Anasayfa</p>
+                </a>
+                <a href="/About">
+                    <span><i class="fa-solid fa-address-card"></i></span>
+                    <p>Hakkımızda</p>
+                </a>
+                <a href="/Contact">
+                    <span><i class="fa-solid fa-briefcase"></i></span>
+                    <p>iletişim</p>
+                </a>
+            
+                <a id="full-tab">
+                    <span onclick="document.getElementById('b-navbar-ft').style.display='flex';"> <i class="fa-solid fa-lines-leaning"></i></span>
+                    <p>Fazlası</p>
+                    <div id="b-navbar-ft">
+                        <span onclick="this.parentElement.style.display='none';">  <i class="fa fa-close"></i></span>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span onclick="window.location.href='/Home/#Dava-home'" id="btnA">Çalışma Alanları</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-book"></i>
+                                <span onclick="window.location.href='/Makale'" id="btnA">Makaleler</span>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="navbar-left">
+                <a href="/Home"> <img src="~/image/logo.png" />  <span>Bilge GÜLER | Avukat</span></a>
+            </div>
+            <div class="navbar-right">
+                <ul>
+                    <li>
+                        <a href="/Home" id="btnA" class="active">
+                            Anasayfa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/About" id="btnA">Hakkımızda</a>
+                    </li>
+                    <li>
+                        <a href="/Home#Dava-home" id="btnA">Çalışma Alanları</a>
+                    </li>
+                    <li>
+                        <a href="/Makale" id="btnA">Makaleler</a>
+                    </li>
+                    <li>
+                        <a href="/Contact" id="btnA">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <a onclick="topFunction()" id="go-up"><span><i class="fa-solid fa-arrow-up"></i></span></a>
+        <div id="google_translate_element">
+            <div id=":0.targetLanguage">
+      
+      
+            </div>
+        </div>
+        @RenderBody()
+    </main>
+
+    @await Html.PartialAsync("~/Views/Shared/footer.cshtml")
+
+
+   
+
+    <script src="/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html> 

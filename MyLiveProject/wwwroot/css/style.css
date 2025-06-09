@@ -1,0 +1,954 @@
+﻿namespace MyLiveProject.wwwroot.css
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#go-up {
+    width: 3rem;
+    background-color: black;
+    height: 3rem;
+    color: #fff;
+    margin: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    transition: all 500s ease;
+    z-index: 1;
+}
+
+    #go-up i {
+        margin-top: 1rem;
+    }
+
+main a:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+#b-navbar {
+    display: none;
+}
+
+#button {
+    display: inline-block;
+    border: solid 1px black;
+    border-radius: 2rem;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    width: 20%;
+    color: black;
+    transition: all 300ms ease;
+    font-size: 1.2rem;
+}
+
+    #button:hover {
+        color: #FFFFFF;
+        background-color: black;
+    }
+
+
+/*Header*/
+#bg-img {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 25rem;
+    width: 100%;
+}
+
+
+
+
+header {
+    background-color: #ffffff;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+    .navbar .navbar-left {
+        position: relative;
+    }
+
+        .navbar .navbar-left a {
+            color: black;
+            font-size: 2rem;
+            display: flex;
+        }
+
+            .navbar .navbar-left a img {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            .navbar .navbar-left a span {
+                font-size: 1.5rem;
+                margin: .5rem 0 0 .5rem;
+            }
+
+    .navbar .navbar-right {
+    }
+
+        .navbar .navbar-right ul {
+            display: flex;
+            margin-right: 2rem;
+        }
+
+            .navbar .navbar-right ul li a {
+                color: black;
+                margin-left: 1rem;
+                position: relative;
+            }
+
+                .navbar .navbar-right ul li a::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0px;
+                    height: 2px;
+                    background: black;
+                    opacity: 0;
+                    -webkit-transition: all 800ms ease;
+                    /* Safari */
+                    transition: all 800ms ease;
+                }
+
+                .navbar .navbar-right ul li a:hover::after {
+                    opacity: 1;
+                    width: 100%;
+                }
+
+.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: 1;
+}
+/*Main*/
+main {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.top-content {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+    .boxes .box {
+        padding: var(--card-padding);
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        justify-content: center;
+        color: black;
+        background-color: transparent;
+        box-shadow: var(--box-shadow);
+        align-items: center;
+        transition: all 300ms ease;
+        border: 1px solid slategray;
+    }
+
+        .boxes .box:hover {
+            box-shadow: none;
+            cursor: pointer;
+            padding: 1.7rem;
+        }
+
+        .boxes .box span i {
+            margin-top: 1rem;
+            font-size: 5rem;
+        }
+
+        .boxes .box p {
+            color: slategray;
+        }
+/** vision*/
+.vision {
+    width: 100%;
+    height: 20rem;
+    margin-top: 4rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    transition: all 300ms ease;
+    background-color: #F9F9F9;
+    color: black;
+}
+
+    .vision h6 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .vision h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+
+/* Davalar */
+
+
+.dava-content {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    height:auto;
+    overflow: hidden;
+}
+
+    .dava-content .dava-content-top {
+        text-align: center;
+    }
+
+        .dava-content .dava-content-top h2 {
+            font-size: 2rem;
+        }
+
+    .dava-content .dava-content-bottom {
+        display: grid;
+        grid-template-columns: repeat(4,14rem); /* 4 s�tun */
+        grid-template-rows: repeat(2,15rem); /* 4 s�tun */
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        transition: all 300ms ease;
+        scrollbar-color: #F7F7F8;
+        height: auto;
+        overflow: hidden;
+    }
+
+        .dava-content .dava-content-bottom .dcbox {
+            position: relative;
+            background-color: #252B48;
+            padding: var(--card-padding);
+            width: 17rem;
+            height: 11rem;
+            flex: 0 0 17%;
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            transition: all 300ms ease;
+            margin: .5rem 0 .3rem -2.5rem;
+            overflow: hidden;
+            color: white;
+            border-radius: .5rem;
+        }
+
+    .dava-content .dcbox:hover {
+        cursor: pointer;
+        box-shadow: none;
+        background-color: #ffffff;
+        padding: 1.5rem;
+    }
+
+        .dava-content .dcbox:hover #dava-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .dava-content .dcbox:hover #dava-info i {
+                display: flex;
+                flex-direction: column;
+            }
+
+    .dava-content .dcbox h3 {
+        margin-top: 3rem;
+        font-size: 1.3rem;
+    }
+
+    .dava-content .dcbox #dava-info, #dava-info i {
+        margin: 0;
+        text-align: center;
+        display: none;
+    }
+
+#icon-law {
+    align-items: center;
+    font-size: 2.2rem;
+}
+/* Makale */
+
+
+.makale {
+    background-color: var(--color-background);
+    margin-top: 2rem;
+    height: 30rem;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+}
+
+    .makale h1 {
+        margin-top: 1rem;
+    }
+
+    .makale #makale-box {
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffffff;
+        width: 15rem;
+        height: 20rem;
+        color: black;
+        border: solid 0.5px #F7F7F8;
+        box-shadow: var(--box-shadow);
+        transition: all 300ms ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .makale #makale-box:hover #h-blur-effects {
+            cursor: pointer;
+            background-color: #171A21;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 80%;
+            text-align: center;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0;
+            transition: all 600ms ease;
+        }
+
+    .makale .m-content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 7rem;
+    }
+
+#h-blur-effects {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin-left: 22rem;
+}
+
+    #h-blur-effects span i {
+        font-size: 2rem;
+    }
+
+    #h-blur-effects h1 {
+        margin-top: 7rem;
+    }
+
+.makale #makale-box .m-top {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    width: 100%;
+    height: 50%;
+}
+
+    .makale #makale-box .m-top img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+
+.makale #makale-box .m-bottom {
+    text-align: left;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+    .makale #makale-box .m-bottom h5 {
+        text-transform: uppercase;
+        margin-top: 0;
+        font-size: .8rem;
+    }
+
+    .makale #makale-box .m-bottom small {
+        margin: 0;
+        font-size: .7rem;
+    }
+
+    .makale #makale-box .m-bottom .c-baslik {
+        display: flex;
+        font-family: 'poppins-thin',sans-serif;
+    }
+
+        .makale #makale-box .m-bottom .c-baslik span {
+            margin-top: 0.4rem;
+        }
+
+        .makale #makale-box .m-bottom .c-baslik h6 {
+            font-family: 'poppins-thin',sans-serif;
+            margin-left: .5rem;
+        }
+
+/*SUB MOD*/
+
+.sub-mod {
+    margin-top: 2rem;
+    width: 100%;
+    height: 20rem;
+    align-items: center;
+}
+
+    .sub-mod .sub-top {
+        width: 100%;
+        height: 50%;
+        margin-top: 5rem;
+    }
+
+        .sub-mod .sub-top h3 {
+            font-size: 2rem;
+        }
+
+        .sub-mod .sub-top input {
+            font-family: "poppins",sans-serif;
+            text-align: center;
+            width: 40%;
+            height: 4rem;
+            border: solid 1px black;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+        }
+
+    .sub-mod .sub-bottom {
+        width: 100%;
+        height: 50%;
+        margin-top: 1rem;
+    }
+
+/* HAKKIMDA BAŞLANGIÇ*/
+
+
+.about {
+    display: block;
+    width: 100%;
+}
+
+    .about .about-top {
+        text-align: center;
+    }
+
+        .about .about-top h4 {
+            margin-bottom: 0;
+        }
+
+    .about .about-bottom {
+        display: flex;
+        width: 100%;
+        gap: 3rem;
+    }
+
+        .about .about-bottom .about-img img {
+            width: 20rem;
+            height: auto;
+            margin-left: 1rem;
+            border-radius: .5rem;
+        }
+
+        .about .about-bottom p {
+            margin-right: 1rem;
+        }
+/* HAKKIMDA SON*/
+/*full tab*/
+.b-navbar-ft {
+    display: none;
+}
+/*full tab son*/
+/* İletişimm */
+.contact {
+    width: 100%;
+    display: block;
+}
+
+    .contact h1 {
+        text-align: center;
+    }
+
+    .contact .contact-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .contact .contact-top .contact-tl {
+            width: 35%;
+            font-size: 2rem;
+        }
+
+        .contact .contact-top .contact-tm {
+            display: block;
+        }
+
+            .contact .contact-top .contact-tm input {
+                font-family: "poppins",sans-serif;
+                text-align: center;
+                border: solid 1px black;
+                border-radius: var(--border-radius-2);
+                font-size: 1rem;
+                width: 30rem;
+                height: 3rem;
+                margin-top: 1rem;
+                font-family: "poppins",sans-serif;
+            }
+
+            .contact .contact-top .contact-tm textarea {
+                font-family: "poppins",sans-serif;
+                text-align: center;
+                border: solid 1px black;
+                border-radius: var(--border-radius-2);
+                font-size: 1rem;
+                width: 30rem;
+                height: 5rem;
+                margin-top: 1rem;
+                font-family: "poppins",sans-serif;
+            }
+
+            .contact .contact-top .contact-tm form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact .contact-top .contact-tm button {
+                margin-top: 1rem;
+                display: inline-block;
+                border: solid 1px black;
+                border-radius: 1rem;
+                background-color: #FFFFFF;
+                color: black;
+                height: 4rem;
+                transition: all 300ms ease;
+                font-size: 1.5rem;
+            }
+
+                .contact .contact-top .contact-tm button span, i {
+                    margin-bottom: 1rem;
+                }
+
+                .contact .contact-top .contact-tm button:hover {
+                    color: #FFFFFF;
+                    background-color: black;
+                    cursor: pointer;
+                }
+/* İletişimm  Son*/
+
+/*Makalee*/
+.m-content {
+    display: block;
+    text-align: center;
+}
+
+    .m-content .m-content-b {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
+        .m-content .m-content-b .m-content-b-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 75%;
+            margin: 2rem;
+        }
+
+        .m-content .m-content-b .m-content-b-top-rm {
+            display: flex;
+            margin: 2rem;
+            flex-direction: column;
+            width: 75%;
+            align-items: center;
+        }
+
+            .m-content .m-content-b .m-content-b-top-rm img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+               
+            }
+
+            .m-content .m-content-b .m-content-b-top-rm p {
+                width: 80%;
+                text-align: left;
+            }
+
+            .m-content .m-content-b .m-content-b-top-rm img {
+                width: 80%;
+                height: 20rem;
+                background-size: cover;
+            }
+
+.mak-box {
+    margin: 2rem;
+    background-color: #ffffff;
+    width: 15rem;
+    height: 20rem;
+    color: black;
+    border: solid 0.5px #F7F7F8;
+    box-shadow: none;
+    transition: all 300ms ease;
+}
+
+    .mak-box:hover {
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+    }
+
+.mak-bottom .mak-b-bottom {
+    text-align: left;
+    margin: 0 1rem 0 1rem;
+}
+
+    .mak-bottom .mak-b-bottom h5 {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+.mak-top {
+    width: 100%;
+    height: 45%;
+}
+
+    .mak-top img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.mak-bottom .mak-b-baslik {
+    display: flex;
+}
+
+    .mak-bottom .mak-b-baslik i {
+        font-size: 0.8rem;
+        margin: 1rem 0.5rem 0 1rem;
+    }
+
+    .mak-bottom .mak-b-baslik h6 {
+        margin: 1rem;
+        font-size: 0.6em;
+        margin-left: 0;
+    }
+
+.mak-bottom .mak-b-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+    .mak-bottom .mak-b-bottom h5 {
+        font-size: 0.8rem;
+        margin: 0 0 .5rem 0;
+    }
+
+    .mak-bottom .mak-b-bottom small {
+        font-size: 0.7rem;
+    }
+
+    .mak-bottom .mak-b-bottom .mak-b-bottom-date {
+        margin-top: 1rem;
+    }
+
+        .mak-bottom .mak-b-bottom .mak-b-bottom-date a {
+            color: black;
+        }
+
+            .mak-bottom .mak-b-bottom .mak-b-bottom-date a:hover {
+                color: aqua;
+            }
+
+
+/*Sub*/
+#sub-home-page {
+    width: 100%;
+}
+
+    #sub-home-page .sub {
+        width: 100%;
+    }
+
+/*#sub-mak-page {
+    width: 25%;
+}
+#sub-mak-page .sub {
+    width: 25%;
+}*/
+
+
+.sub .sub-top {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    text-align: center;
+    align-items: center;
+}
+
+    .sub .sub-top h3 {
+        text-align: left;
+    }
+
+    .sub .sub-top input {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border: solid 1px black;
+        border-radius: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .sub .sub-top button {
+        background-color: #fff;
+        color: black;
+        border: solid 1px black;
+        border-radius: 2rem;
+        height: 3rem;
+        width: 50%;
+        transition: all 300ms ease;
+    }
+
+    .sub .sub-top a span, i {
+        margin-top: 1rem;
+    }
+
+    .sub .sub-top button:hover {
+        cursor: pointer;
+        color: white;
+        background-color: black;
+    }
+/*Sub son*/
+/*Makalee Son*/
+
+
+/*Admin Layout*/
+#a-body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Admin Layout sonn*/
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #171A21;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+    footer .ft-content {
+        display: flex;
+        justify-content: space-around;
+        margin-right: 3rem;
+    }
+
+        footer .ft-content .ft-left {
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+
+            footer .ft-content .ft-left span {
+                display: flex;
+            }
+
+                footer .ft-content .ft-left span img {
+                    width: 3rem;
+                    height: 3rem;
+                }
+
+        footer .ft-content .ft-middle {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer .ft-content .ft-right {
+        }
+
+            footer .ft-content .ft-right .social-media {
+                display: flex;
+                font-size: 1.5rem;
+                position: absolute;
+                text-align: center;
+            }
+
+                footer .ft-content .ft-right .social-media a {
+                    margin-right: 1rem;
+                    border: solid 0.5px #fff;
+                    border-radius: 50%;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    transition: all 200ms ease;
+                }
+
+                    footer .ft-content .ft-right .social-media a span i {
+                        margin-top: 0.5rem
+                    }
+
+                    footer .ft-content .ft-right .social-media a:hover {
+                        color: blueviolet;
+                        font-size: 1.4rem;
+                    }
+
+    footer .fb-content {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    footer hr {
+        margin-top: 2rem;
+    }
+
+
+/* Toast Notification*/
+
+#toastBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.toast {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgb(0, 0,0,3);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+    .toast i {
+        font-size: 2rem;
+        margin: 0 1rem 0 1rem;
+        color: green;
+    }
+
+    .toast.error i {
+        color: red;
+    }
+
+    .toast.invalid i {
+        color: orange;
+    }
+
+    .toast::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+        background: green;
+        animation: anim 5s linear forwards;
+    }
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
+.toast.error::after {
+    background: red;
+}
+
+.toast.toast.invalid::after {
+    background: orange;
+}

@@ -1,0 +1,65 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@using EntityLayer.Concrete
+@using X.PagedList.Web.Common;
+@model IPagedList<Category> // list edicem ki verileri çekebileyim
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <h2 class="text-center">KATEGORİ</h2>
+    <div class="am-content">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>KATEGORİ</th>
+                    <th>TARİH</th>
+                    <th>ICON</th>
+                    <th>DURUM</th>
+                    <th>GÜNCELLE</th>
+                    <th>SİL</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CategoryID</td>
+                        <td>@item.CategoryName</td>
+                        <td>@item.CategoryDate</td>
+                        <td>@item.CategoryIcon</td>
+                        @if (item.CategoryStatus == true)
+                        {
+                            <td><button type="button" class="btn btn-success">  <i class="fa-solid fa-check"></i></button></td>
+                        }
+                        else
+                        {
+                            <td>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fa-solid fa-close"></i>
+                                </button>
+                            </td>
+                        }
+                        <td><a href="/AdminCategory/updateCategory/@item.CategoryID" type="button" class="btn btn-outline-warning">GÜNCELLE</a></td>
+                        <td><a href="/AdminCategory/DeleteCategory/@item.CategoryID" type="button" class="btn btn-outline-danger">SİL</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}),   new PagedListRenderOptions {
+        DisplayLinkToIndividualPages = true,
+        DisplayPageCountAndCurrentLocation = false,
+        MaximumPageNumbersToDisplay = 10,
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" },
+        })
+    </div>
+
+    <a href="/AdminCategory/addCategory" type="button" class="btn btn-outline-primary btn-add">Yeni Kategori Ekle &nbsp; <i class="fa-solid fa-square-plus"></i></a>
+</body>
+</html>
+

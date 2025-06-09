@@ -1,0 +1,33 @@
+﻿@model MyLiveProject.Models.ModelViewControl
+@{
+    ViewData["Title"] = "MoreDava";
+    Layout = "_Layout";
+}
+
+<html>
+<body>
+    <div class="m-content">
+        <h2>Dava</h2>
+        <div class="m-content-b">
+            <div class="m-content-b-top-rm">
+                @foreach (var item in Model.Davamodel)
+                {
+                    if (item != null)
+                    {
+                        <h2>@item.DavaName</h2>
+                        <img src="@item.DavaIcon" />
+                        <p>@item.DavaDescription</p>
+                    }
+
+                }
+            </div>
+            <div id="sub-mak-page">
+                <div class="sub">
+                    @await Html.PartialAsync("~/Views/AdminSub/Subscribe.cshtml")
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

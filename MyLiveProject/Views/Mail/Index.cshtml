@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.SubScribe
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<html>
+<body>
+    <h2 class="text-center">Mail Gönder</h2>
+    <div class="s-content">
+
+      
+            @Html.DropDownListFor(x=>x.SubID,(List<SelectListItem>)ViewBag.cvalue,new{@class = "form-control"})
+     
+        
+        
+      
+    </div>
+</body>
+</html>

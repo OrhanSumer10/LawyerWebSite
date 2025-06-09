@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Makale
+@{
+    ViewData["Title"] = "addMakale";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <div class="dm-content">
+        <h1>Makale Ekle</h1>
+        <br />
+        @using (Html.BeginForm("addMakale", "AdminMakale", FormMethod.Post))
+        {
+            @Html.Label("Makale Adı")
+            <input type="text" class="form-control" name="MakaleTitle"  required>
+            <br />
+            @Html.Label("Makale İçerik")
+            <textarea type="text" class="form-control" name="MakaleContent"  required></textarea>
+            <br />
+            @Html.Label("Makale Kategori")
+            @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cv,new{@class = "form-control"})
+            <br />
+            @Html.Label("Makale Image")
+            @Html.TextBoxFor(x=>x.MakaleImage, new{@class = "form-control"})
+            <br />
+            @Html.Label("Makale Tarih")
+            <input type="datetime" class="form-control" name="MakaleCreateDate" required>
+            <br />
+            @Html.Label("Makale Durum")
+            @Html.DropDownListFor(x => x.MakaleStatus, new List<SelectListItem>
+        { new SelectListItem{Text="Aktif", Value="True"},
+        new SelectListItem{Text="Pasif", Value="False"}},new{@class = "form-control"})
+            <br />
+            <button class="btn btn-info"> Makale Kaydet </button>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "addCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <div class="dm-content">
+        <h1>Kategori Ekle</h1>
+        <br />
+        @using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
+        {
+            @Html.Label("Kategori Adı")
+            <input type="text" class="form-control" name="CategoryName" required>
+            <br />
+            @Html.Label("Kategori Tarih")
+            <input type="text" class="form-control" name="CategoryDate" required>
+            <br />
+            @Html.Label("Kategori Icon")
+            <input type="text" class="form-control" name="CategoryIcon" required>
+            <br />
+            @Html.Label("Kategori Durum")
+            @Html.DropDownListFor(x => x.CategoryStatus, new List<SelectListItem>
+        { new SelectListItem{Text="Aktif", Value="True"},
+        new SelectListItem{Text="Pasif", Value="False"}},new{@class = "form-control"})
+            <br />
+            <button class="btn btn-info"> Kategori Kaydet </button>
+        }
+    </div>
+</body>
+</html>
+

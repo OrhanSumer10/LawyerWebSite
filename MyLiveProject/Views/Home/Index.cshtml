@@ -1,0 +1,132 @@
+﻿@model MyLiveProject.Models.ModelViewControl
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<head>
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+</head>
+<body>
+    @foreach (var item in Model.Adminmodel)
+    {
+        if (item != null)
+        {
+            <div id="bg-img" style="background-image:url(../@item.Banner);"> </div>
+
+        }
+    }
+    <div class="prensip">
+        <div class="top-content">
+            <h6>ÇALIŞMA PRENSİPLERİMİZ</h6>
+            <h1>Müvekkillerimizin menfaatlerini ve ihtiyaçlarını göz önüne alarak işimizi yapıyoruz.</h1>
+        </div>
+        <div class="boxes">
+            <div class="box box-1">
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                </span>
+                <h2>Güvenilirlik</h2>
+                <p>
+                    Müvekkillerimizin talimatlarını ve menfaatlerini göz önüne alarak hukuki süreci birlikte yönetiyoruz.
+                    Süreç hakkındaki bilgileri güncel olarak müvekkillerimizle paylaşıyoruz.
+                </p>
+            </div>
+            <div class="box box-2">
+                <span>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </span>
+                <h2>Yol Haritamız</h2>
+                <p>
+                    Müvekkillerimizin hukuksal ihtiyaçlarını dinledikten sonra gerekli tüm hazırlıkları yapıyor; en pratik ve etkili çözümü belirliyoruz.
+                </p>
+            </div>
+            <div class="box box-3">
+                <span>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </span>
+                <h2> Pratik Çözüm</h2>
+                <p>
+                    Dava ve danışmanlıklarda müvekkiller için en pratik çözümü sunuyoruz.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="vision">
+        <h6>VİZYONUMUZ</h6>
+        <h2> Değerli müvekkillerimizin hukuksal mücadelelerinde her daim yanlarında oluyoruz.</h2>
+        <h5>
+            Müvekkillerimizle birlikte yürüttüğümüz hukuki süreç
+            ve uyuşmazlıkları en hızlı şekilde başarıya ulaştırmak için çalışıyoruz.
+        </h5>
+    </div>
+    <section id="Dava-home">
+        <div class="dava-content">
+            <div class="dava-content-top">
+                <h2>Çalışma Alanlarımız</h2>
+            </div>
+            <div class="dava-content-bottom">
+                @foreach (var item in Model.Davamodel)
+                {
+                    if (item != null)
+                    {
+                        <div class="dcbox" style="background-image:url('@item.DavaIcon'); background-size:cover;" onclick="location.href='/Dava/MoreDava/@item.DavaID'">
+                            <span id="icon-law">
+                            </span>
+                            <h3>@item.DavaName</h3>
+                            <span id="dava-info">Bilgi Al <i class="fa-solid fa-circle-info"></i> </span>
+                        </div>
+                    }
+
+                }
+            </div>
+        </div>
+    </section>
+    <div class="makale">
+        <div id="makale-baslik">
+            <h1>MAKALE</h1>
+        </div>
+        <div class="m-content">
+            @foreach (var item in Model.makalemodel)
+            {
+                if (item != null)
+                {
+                    <div id="makale-box">
+                        <div id="h-blur-effects" onclick="location.href='/Makale/ReadMakale/@item.MakaleID'">
+                            <h1>Makaleyi Oku</h1>
+                            <span> <i class="fa-solid fa-book"></i></span>
+                        </div>
+                        <div class="m-top">
+                            <img src="@item.MakaleImage" />
+                        </div>
+                        <div class="m-bottom">
+                            <div class="c-baslik">
+                                <span> <i class="@item.category!.CategoryIcon"></i></span>
+                                <h6>@item.category.CategoryName |  @(((DateTime)item.MakaleCreateDate).ToString("dd-MMMM-yyyy"))</h6>
+                            </div>
+                            <h5>
+                                @item.MakaleTitle
+                            </h5>
+                            <small>
+                                @item.MakaleContent.Substring(0,item.MakaleContent.Substring(0,50).LastIndexOf(" "))...
+                            </small>
+                        </div>
+                    </div>
+                }
+
+            }
+
+        </div>
+    </div>
+    <div id="Sub-home-page">
+        <div class="sub">
+            @await Html.PartialAsync("~/Views/AdminSub/Subscribe.cshtml")
+        </div>
+    </div>
+
+
+</body>
+</html>
+

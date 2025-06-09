@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<body>
+    <div class="contact">
+        <h1>İLETİŞİM</h1>
+        <div class="contact-top">
+            <div class="contact-tl">
+                <h6>BİZE ULAŞIN</h6>
+                <h2>Sorularınız için bizimle iletişime geçin!</h2>
+            </div>
+            <div class="contact-tm">
+                <div class="alert alert-info">@ViewBag.uyari</div>
+                <h3>İLETİŞİM FORMU</h3>
+                <div class="alert alert-info">@TempData["Message"]</div>
+                <form id="contact" action="/Contact" method="post">
+                    <input placeholder="Adınız Soyadınız" name="ContactName" type="text" required autofocus>
+
+                    <input placeholder="E-Posta Adresiniz" name="ContactEmail" type="email" required>
+
+                    <input placeholder="Konu" type="text" name="ContactSubject" required>
+
+                    <textarea placeholder="Lütfen Mesajınızı Buraya Yazın.." name="ContactMessage" required></textarea>
+
+                    <button name="submit" type="submit" id="submit" ><span>GÖNDER &nbsp </span> <i class="fa-solid fa-paper-plane"></i></button>
+                    
+                </form>
+              
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,529 @@
+﻿namespace MyLiveProject.wwwroot.css
+/*Navbar */
+header {
+    background-color: #363949;
+    width: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+#go-up {
+    display: none;
+}
+
+#bg-img {
+    height: 10rem;
+}
+
+#b-navbar {
+    background-color: #363949;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    transition: all 300ms ease;
+    bottom: 0;
+    z-index: 1;
+    justify-content: space-around;
+    margin-left: -1rem;
+    height: 5rem;
+}
+
+    #b-navbar a {
+        display: block;
+    }
+
+        #b-navbar a p {
+            margin-top: 0;
+            font-size: .9rem;
+        }
+
+        #b-navbar a:hover {
+            cursor: pointer;
+        }
+
+
+.navbar {
+    display: block;
+    text-align: center;
+}
+
+    .navbar .navbar-left {
+        text-align: center;
+        
+    }
+        .navbar .navbar-left a {
+            text-align: center;
+        }  .navbar .navbar-left a span{
+               margin-top:.5rem;
+           font-size:1.5rem;
+        }
+
+    .navbar .navbar-right {
+    }
+
+        .navbar .navbar-right ul {
+            display: none;
+        }
+/*Boxess*/
+.boxes {
+    display: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+    .boxes .box p {
+        width: 100%;
+        font-size: .8rem;
+    }
+
+    .boxes .box {
+        padding: var(--card-padding);
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        justify-content: center;
+    }
+
+        .boxes .box.box-1 {
+            box-shadow: var(--box-shadow);
+            align-items: center;
+            transition: all 300ms ease;
+        }
+
+            .boxes .box.box-1:hover {
+                box-shadow: none;
+                cursor: pointer;
+                padding: 1rem;
+                background-color: var(--color-background);
+            }
+
+            .boxes .box.box-1 span i {
+                margin-top: .5rem;
+                font-size: 2.5rem;
+            }
+
+            .boxes .box.box-1 p {
+                font-size: .7rem;
+            }
+
+        .boxes .box.box-2 {
+            box-shadow: var(--box-shadow);
+            transition: all 300ms ease;
+        }
+
+            .boxes .box.box-2:hover {
+                box-shadow: none;
+                cursor: pointer;
+                padding: 1rem;
+                background-color: var(--color-background);
+            }
+
+            .boxes .box.box-2 span i {
+                margin-top: .5rem;
+                font-size: 2.5rem;
+            }
+
+            .boxes .box.box-2 p {
+                font-size: .7rem;
+            }
+
+        .boxes .box.box-3 {
+            box-shadow: var(--box-shadow);
+            transition: all 300ms ease;
+        }
+
+            .boxes .box.box-3:hover {
+                box-shadow: none;
+                cursor: pointer;
+                padding: 1rem;
+                background-color: var(--color-background);
+            }
+
+            .boxes .box.box-3 span i {
+                margin-top: .5rem;
+                font-size: 2.5rem;
+            }
+        .boxes .box.box-3 p {
+            font-size: .7rem;
+        }
+/*Vision*/
+.vision {
+    width: 100%;
+    height: 20rem;
+    margin-top: 4rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 300ms ease;
+}
+
+    .vision h6 {
+        font-size: .8rem;
+        margin: 0 2rem 0 2rem;
+    }
+
+    .vision h2 {
+        font-size: 1.5rem;
+        margin: 0 2rem 0 2rem;
+    }
+/* ------ ---------dava content ----------- */
+.dava-content {
+    width: 100%;
+    height: 20rem;
+    transition: all 300ms ease;
+    scrollbar-color: #F7F7F8;
+    text-align: center;
+}
+
+    .dava-content .dava-content-top {
+        width: 100%;
+        height: 2rem;
+        text-align: center;
+    }
+
+        .dava-content .dava-content-top h2 {
+            font-size: 1.5rem;
+        }
+
+    .dava-content .dava-content-bottom {
+        width: 100%;
+        height: 18rem;
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+    }
+
+        .dava-content .dava-content-bottom .dcbox {
+            padding: var(--card-padding);
+            width: 40%;
+            height: 5rem;
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            transition: all 300ms ease;
+            margin-left: 1rem;
+            margin-top: .2rem;
+        }
+
+
+    .dava-content .dcbox h3 {
+        margin-top: 1rem;
+        font-size: .8rem;
+    }
+
+#icon-law {
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+
+/*Makale*/
+
+.makale {
+    background-color: var(--color-background);
+    margin-top: 2rem;
+    height: 28rem;
+    text-align: center;
+    display: block;
+    width: 100%;
+    overflow: scroll;
+}
+
+    .makale .m-content {
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .makale .makale-box {
+        width: 100%;
+        background-color: #F5F5F5;
+        width: 15rem;
+        height: 17rem;
+        color: black;
+        border: solid 0.5px #F7F7F8;
+        border-radius: var(--border-radius-2);
+        box-shadow: var(--box-shadow);
+        transition: all 300ms ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .makale h1 {
+        margin-top: .7rem;
+    }
+
+    .makale .makale-box .m-bottom h3 {
+        font-size: 1rem;
+    }
+
+
+/*SUB MOD*/
+
+.sub-mod {
+    margin-top: 2rem;
+    width: 100%;
+    height: 15rem;
+    text-align: center;
+    position: relative;
+}
+
+    .sub-mod .sub-top {
+        width: 100%;
+        height: 50%;
+        margin-top: 5rem;
+    }
+
+        .sub-mod .sub-top h2 {
+            font-size: 1.5rem;
+        }
+
+        .sub-mod .sub-top input {
+            font-family: "poppins",sans-serif;
+            text-align: center;
+            width: 70%;
+            height: 3rem;
+            border: solid 1px black;
+            border-radius: 2rem;
+            font-size: 1rem;
+        }
+
+    .sub-mod .sub-bottom {
+        width: 100%;
+        height: 50%;
+        margin-top: 1rem;
+    }
+
+        .sub-mod .sub-bottom #button {
+            display: inline-block;
+            border: solid 1px black;
+            border-radius: 2rem;
+            background-color: #FFFFFF;
+            padding: 1rem;
+            width: 50%;
+            color: black;
+            transition: all 300ms ease;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+
+/* HAKKIMDA BAŞLANGIÇ*/
+
+
+.about {
+    display: block;
+    width: 100%;
+}
+
+    .about .about-top {
+        text-align: center;
+    }
+
+        .about .about-top h4 {
+            margin-bottom: 0;
+        }
+
+    .about .about-bottom {
+        display: block;
+        text-align: center;
+        width: 100%;
+        gap: 3rem;
+    }
+
+        .about .about-bottom .about-img img {
+            width: 20rem;
+            height: auto;
+            margin-left: 1rem;
+            border-radius: .5rem;
+        }
+
+        .about .about-bottom p {
+            margin-right: 1rem;
+        }
+/* HAKKIMDA SON*/
+
+/* İletişimm */
+
+.contact .contact-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+    .contact .contact-top .contact-tl {
+        width: 100%;
+        text-align: center;
+    }
+
+        .contact .contact-top .contact-tl h2 {
+            font-size: 2rem;
+        }
+
+    .contact .contact-top .contact-tm {
+        display: block;
+    }
+/* İletişimm Son*/
+
+/*Full tab*/
+#b-navbar-ft {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 60rem;
+    left: 0;
+    position: fixed;
+    display: flex;
+    transition: all 300ms ease;
+    text-align: center;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+    #b-navbar-ft span i {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    #b-navbar-ft span i, #b-navbar-ft {
+        top: -60rem;
+    }
+
+        #b-navbar-ft ul li {
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+        }
+
+            #b-navbar-ft ul li i {
+                font-size: 1.5rem;
+            }
+
+            #b-navbar-ft ul li span {
+                color: black;
+                font-size: 1.5rem;
+                margin: 0.5rem 0 0 1rem;
+            }
+
+#full-tab:hover #b-navbar-ft {
+    top: 0;
+}
+
+#b-navbar-fm {
+}
+/*Full tab son*/
+
+/*Makaleee */
+.m-content {
+    display: block;
+    text-align: center;
+}
+
+    .m-content .m-content-b {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+        .m-content .m-content-b .m-content-b-top {
+            flex-direction: column;
+            display: flex;
+            margin: 2rem;
+        }
+
+.mak-bottom .mak-b-bottom h5 {
+    font-size: .9rem;
+    width: 100%;
+}
+
+.mak-bottom .mak-b-bottom small {
+    font-size: 0.7rem;
+    width: 100%;
+}
+
+.mak-box {
+    background-color: #ffffff;
+    width: 75%;
+    height: 20rem;
+    color: black;
+    border: solid 0.5px #F7F7F8;
+    border-radius: var(--border-radius-1);
+    box-shadow: none;
+    transition: all 300ms ease;
+}
+
+.sub {
+    margin: 2rem;
+    width: 75%;
+}
+/*Makaleee son*/
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #171A21;
+    color: #fff;
+}
+
+    footer .ft-content {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+    }
+
+        footer .ft-content .ft-left {
+            margin-left: 1rem;
+            font-size: 1.5rem;
+        }
+
+        footer .ft-content .ft-middle {
+            display: flex;
+            flex-direction: column;
+            gap: 0rem;
+            font-size: .8rem;
+            margin-left: 1rem;
+        }
+
+        footer .ft-content .ft-right h2 {
+            margin-top: 0;
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+
+        footer .ft-content .ft-right .social-media {
+            margin-left: 1rem;
+            display: flex;
+            font-size: 1.5rem;
+            position: absolute;
+            text-align: center;
+        }
+
+            footer .ft-content .ft-right .social-media a {
+                border: solid 0.5px #fff;
+                border-radius: 50%;
+                width: 2.5rem;
+                height: 2.5rem;
+                transition: all 200ms ease;
+            }
+
+
+    footer .fb-content {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    footer hr {
+        margin-top: 5rem;
+    }

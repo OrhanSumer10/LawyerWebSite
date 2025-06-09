@@ -1,0 +1,32 @@
+﻿@model MyLiveProject.Models.ModelViewControl
+<footer>
+    @foreach (var item in Model.Adminmodel)
+    {
+    <div class="ft-content">
+        <div class="ft-left">
+            <span><img src="~/image/footerlogo.png" /> Bilge GÜLER | Avukat</span>
+        </div>
+
+        <div class="ft-middle">
+            <h2>İletişim Bilgileri</h2>
+            <span><i class="fa-solid fa-location-dot"></i> &nbsp  @item.Adress </span>
+                <span><i class="fa-regular fa-envelope"></i>&nbsp  @item.Mail</span>
+                <span><i class="fa fa-phone"></i>&nbsp  @item.PhoneNumber</span>
+        </div>
+        <div class="ft-right">
+            <h2>Sosyal Medya</h2>
+            <div class="social-media">
+                    <a href=" @item.FacebookAdress"><span><i class="fa-brands fa-facebook"></i></span></a>
+                    <a href=" @item.InstagramAdress"><span><i class="fa-brands fa-instagram"></i></span></a>
+            </div>
+        </div>
+
+    </div>
+    <hr size="1" />
+    <div class="fb-content">
+        Bilge GÜLER |Avukat © 2023 – Tüm Hakları Saklıdır.
+    </div>
+
+    }
+</footer>
+

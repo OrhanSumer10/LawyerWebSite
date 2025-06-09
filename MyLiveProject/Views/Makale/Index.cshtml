@@ -1,0 +1,48 @@
+﻿@model MyLiveProject.Models.ModelViewControl
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<body>
+    <div class="m-content">
+        <h2>MAKALE</h2>
+        <div class="m-content-b">
+            <div class="m-content-b-top">
+                @foreach (var item in Model.makalemodel)
+                {
+                <div class="mak-box">
+                    <div class="mak-top">
+                        <img src="@item.MakaleImage" />
+                    </div>
+                    <div class="mak-bottom">
+                        <div class="mak-b-baslik">
+                            <span> <i class="@item.category!.CategoryIcon"></i></span>
+                                <h6> @item.category.CategoryName | @(((DateTime)item.MakaleCreateDate).ToString("dd-MMMM-yyyy"))  </h6>
+                        </div>
+                        <div class="mak-b-bottom">
+                            <h5>@item.MakaleTitle</h5>
+                            <small>
+                                    @item.MakaleContent.Substring(0,item.MakaleContent.Substring(0,30).LastIndexOf(" "))...
+                            </small>
+                            <div class="mak-b-bottom-date">
+                                <a href="/Makale/ReadMakale/@item.MakaleID">Makaleyi Oku <span> <i class="fa-solid fa-paper-plane"></i></span> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+                }      
+            </div>
+            <div id="sub-mak-page">
+                <div class="sub">
+                    @await Html.PartialAsync("~/Views/AdminSub/Subscribe.cshtml")
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

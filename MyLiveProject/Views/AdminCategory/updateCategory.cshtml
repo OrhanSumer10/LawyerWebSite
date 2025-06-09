@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "updateCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <div class="dm-content">
+        <h1>Kategori Güncelle</h1>
+        <br />
+        @using (Html.BeginForm("updateCategory", "AdminCategory", FormMethod.Post))
+        {
+            @Html.Label("Kategori Adı")
+            @Html.TextBoxFor(x=>x.CategoryName,new { @class = "form-control" })
+            <br />
+            @Html.Label("Kategori Tarih")
+            @Html.TextBoxFor(x=>x.CategoryDate,new { @class = "form-control" })   
+            <br />
+            @Html.Label("Kategori Icon")
+           @Html.TextBoxFor(x=>x.CategoryIcon,new { @class = "form-control" })   
+            <br />
+            @Html.Label("Kategori Durum")
+            @Html.DropDownListFor(x => x.CategoryStatus, new List<SelectListItem>
+        { new SelectListItem{Text="Aktif", Value="True"},
+        new SelectListItem{Text="Pasif", Value="False"}},new{@class = "form-control"})
+            <br />
+            @Html.HiddenFor(x=>x.CategoryID)
+            <button class="btn btn-info"> Kategori Güncelle </button>
+        }
+    </div>
+</body>
+</html>
+

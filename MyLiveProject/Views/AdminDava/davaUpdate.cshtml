@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Dava
+@{
+    ViewData["Title"] = "davaUpdate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <div class="dm-content">
+        <h1>Dava Güncelle</h1>
+        <br />
+        @using (Html.BeginForm("davaUpdate", "AdminDava", FormMethod.Post))
+        {
+            @Html.Label("Dava Adı")
+            @Html.TextBoxFor(x=>x.DavaName,new { @class = "form-control" })   
+            <br />
+            @Html.Label("Dava Açıklama")
+            @Html.TextBoxFor(x=>x.DavaDescription,new { @class = "form-control" })
+            <br />
+            @Html.Label("Dava Tarih")
+            @Html.TextBoxFor(x=>x.DavaDate,new { @class = "form-control" })   
+            <br />
+            @Html.Label("Dava Icon")
+            @Html.TextBoxFor(x=>x.DavaIcon,new { @class = "form-control" })   
+            <br />
+            @Html.Label(" Dava Durum")
+            @Html.DropDownListFor(x => x.DavaStatus, new List<SelectListItem>
+        { new SelectListItem{Text="Aktif", Value="True"},
+        new SelectListItem{Text="Pasif", Value="False"}},new{@class = "form-control"})
+            <br />
+            @Html.HiddenFor(x=>x.DavaID)
+            <button class="btn btn-info"> Dava Güncelle </button>
+        }
+    </div>
+</body>
+</html>
+

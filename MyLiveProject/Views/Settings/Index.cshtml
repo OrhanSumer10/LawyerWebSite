@@ -1,0 +1,26 @@
+﻿@model MyLiveProject.Models.ModelViewControl
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+
+    <div class="s-content">
+        <h2 class="text-center">AYARLAR</h2>
+        <div class="sm-content">
+            <div class="setting-box darkgreen-bgc">
+                <div class="sb-top">
+                    <span><i class="fa-solid fa-circle-info"></i></span>
+                    <h4>Hakkımda</h4>
+                    <small class="text-muted">Profil resmini , anasayfa banner'ını ve hakkımda yazısını değiştir.</small>
+                </div>
+                <div class="sb-bottom">
+                    <a href="/Settings/UpdateContent" class="btn"><span>Düzenle</span> <i class="fa-solid fa-pen"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

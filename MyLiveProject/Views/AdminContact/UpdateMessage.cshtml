@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "UpdateMessage";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <h2 class="text-center">KATEGORİ</h2>
+    <div class="am-content">
+        @using (Html.BeginForm("UpdateMessage", "AdminContact", FormMethod.Post))
+        {
+            @Html.Label("Mesaj")
+            @Html.TextBoxFor(x=>x.ContactMessage, new{@class = "form-control", @readonly="readonly"})
+            <br />
+            @Html.HiddenFor(x=>x.ContactID)
+            <button class="btn btn-info"> Oku</button>
+        }
+
+
+
+    </div>
+</body>
+</html>
+

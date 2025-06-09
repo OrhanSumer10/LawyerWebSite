@@ -1,0 +1,60 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@using EntityLayer.Concrete
+@using X.PagedList.Web.Common;
+@model IPagedList<SubScribe>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <h2 class="text-center">ABONELER</h2>
+    <div class="am-content">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ABONE EMAIL</th>
+                    <th>TARİH</th>
+                    <th>DURUM</th>
+                    <th>SİL</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.SubID</td>
+                        <td>@item.SubEmail</td>
+                        <td>@(((DateTime)item.SubDate).ToString("dd-MMMM-yyyy"))</td>
+                        @if (item.SubStatus == true)
+                        {
+                            <td><button type="button" class="btn btn-success">  <i class="fa-solid fa-check"></i></button></td>
+                        }
+                        else
+                        {
+                            <td>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fa-solid fa-close"></i>
+                                </button>
+                            </td>
+                        }
+                        <td><a href="/AdminSub/DeleteSub/@item.SubID" type="button" class="btn btn-outline-danger">SİL</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}),   new PagedListRenderOptions {
+        DisplayLinkToIndividualPages = true,
+        DisplayPageCountAndCurrentLocation = false,
+        MaximumPageNumbersToDisplay = 10,
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" },
+        })
+    </div>
+</body>
+</html>
+

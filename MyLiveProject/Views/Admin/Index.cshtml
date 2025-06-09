@@ -1,0 +1,73 @@
+﻿@using EntityLayer.Concrete
+@model List<Makale>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<html>
+<body>
+    <div class="a-main-content">
+        <div class="top">
+            <h2><span><i class="fa-solid fa-arrow-trend-up "></i></span> &nbsp; &nbsp; Statistic Card </h2>
+            <div class="top-box-control">
+                <div class="a-main-box">
+                    <div class="a-main-box-left">
+                        <span><i class="fa-solid fa-gavel purple-bgc"></i></span>
+                    </div>
+                    <div class="a-main-box-right">
+                        <h5>Dava</h5>
+                        <h3>@ViewBag.ds</h3>
+                    </div>
+                </div>
+                <div class="a-main-box">
+                    <div class="a-main-box-left">
+                        <span><i class="fa-solid fa-newspaper blue-bgc"></i></span>
+                    </div>
+                    <div class="a-main-box-right">
+                        <h5>Makale</h5>
+                        <h3>@ViewBag.ms</h3>
+                    </div>
+                </div>
+                <div class="a-main-box">
+                    <div class="a-main-box-left">
+                        <span><i class="fa-regular fa-bookmark green-bgc"></i></span>
+                    </div>
+                    <div class="a-main-box-right">
+                        <h5>Yayında Olan Makale</h5>
+                        <h3>@ViewBag.ams</h3>
+                    </div>
+                </div>
+                <div class="a-main-box">
+                    <div class="a-main-box-left">
+                        <span><i class="fa-regular fa-bookmark red-bgc"></i></span>
+                    </div>
+                    <div class="a-main-box-right">
+                        <h5>Yayında Olmayan Makale</h5>
+                        <h3>@ViewBag.pms</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="a-bottom-box">
+                <span class="msg-renk"><i class="fa-solid fa-message"></i></span>
+                <h4>@ViewBag.toplamM</h4>
+                <p class="text-muted">Toplam Mesaj</p>
+            </div>
+            <div class="a-bottom-box">
+                <span class="user-renk"><i class="fa-solid fa-circle-user"></i></span>
+                <h4>@ViewBag.toplamsub</h4>
+                <p class="text-muted">Toplam Abone</p>
+            </div>
+            <div class="a-bottom-box">
+                <span class="newmsg-renk"><i class="fa-solid fa-comment"></i></span>
+                <h4>@ViewBag.om</h4>
+                <p class="text-muted">Okunmayan Mesaj</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

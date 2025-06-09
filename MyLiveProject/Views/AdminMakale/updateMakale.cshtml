@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Makale
+@{
+    ViewData["Title"] = "updateMakale";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <div class="dm-content">
+        <h1>Makale Ekle</h1>
+        <br />
+        @using (Html.BeginForm("updateMakale", "AdminMakale", FormMethod.Post))
+        {
+            @Html.Label("Makale Adı")
+            @Html.TextBoxFor(x=>x.MakaleTitle,new { @class = "form-control" })            
+            <br />
+            @Html.Label("Makale İçerik")
+            @Html.TextAreaFor(x=>x.MakaleContent,new { @class = "form-control" })
+            <br />
+            @Html.Label("Makale Kategori")
+            @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cv,new{@class = "form-control"})
+            <br />
+            @Html.Label("Makale Image")
+            @Html.TextBoxFor(x=>x.MakaleImage,new { @class = "form-control" })
+            <br />
+            @Html.Label("Makale Tarih")
+            @Html.TextBoxFor(x=>x.MakaleCreateDate,new { @class = "form-control" })
+            <br />
+            @Html.Label("Makale Durum")
+            @Html.DropDownListFor(x => x.MakaleStatus, new List<SelectListItem>
+        { new SelectListItem{Text="Yayında", Value="True"},
+        new SelectListItem{Text="Yayında Değil", Value="False"}},new{@class = "form-control"})
+            <br />
+            @Html.HiddenFor(x=>x.MakaleID)
+            ;
+            <button class="btn btn-info"> Makale Güncelle </button>
+        }
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@using EntityLayer.Concrete
+@using X.PagedList.Web.Common;
+@model IPagedList<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<html>
+<body>
+    <h2 class="text-center">MESAJLAR</h2>
+    <div class="am-content">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ADI</th>
+                    <th>MAİL</th>
+                    <th>KONU</th>
+                    <th>MESAJ</th>
+                    <th>TARİH</th>
+                    <th>DURUM</th>
+                    <th>SİL</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ContactID</td>
+                        <td>@item.ContactName</td>
+                        <td>@item.ContactEmail</td>
+                        <td>@item.ContactSubject</td>
+                        <td>@item.ContactMessage</td>
+                        <td>@(((DateTime)item.ContactDate).ToString("dd-MMMM-yyyy"))</td>
+                        @if (item.ContactStatus == true)
+                        {
+                            <td><button type="button" class="btn btn-success">  Okundu</button></td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a href="/AdminContact/UpdateMessage/@item.ContactID" type="button" ondblclick="myalert()" class="btn btn-danger">
+                                    Okunmadı
+                                </a>
+                            </td>
+                        }
+
+                        <td><a href="/AdminContact/DeleteMessage/@item.ContactID" type="button" class="btn btn-outline-danger">SİL</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}),   new PagedListRenderOptions {
+        DisplayLinkToIndividualPages = true,
+        DisplayPageCountAndCurrentLocation = false,
+        MaximumPageNumbersToDisplay = 10,
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" },
+        })
+
+    </div>
+
+</body>
+</html>
+
